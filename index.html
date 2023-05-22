@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="video-js.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <title>Test</title>
+</head>
+<body>
+
+<div id="centerdiv">
+    <video id='hls-link' class="video-js vjs-default-skin" controls>
+        <source id="m3u8link" type="application/x-mpegURL" src="http://test.test">
+    </video>
+
+        <div class="search">
+    <input type="text" class="search__input" placeholder="Enter m3u8 link" id="newLinkInput">
+    <button id="switchButton"><span>Switch Media</span></button>
+    </div>
+</div>
+
+<script src="videojs-contrib-hls.js"></script>
+<script src="video.js"></script>
+
+<script>
+        var player = videojs('hls-link');
+        var m3u8link = document.getElementById('m3u8link');
+        var switchButton = document.getElementById('switchButton');
+        var newLinkInput = document.getElementById('newLinkInput');
+
+        switchButton.addEventListener('click', function() {
+            var newSource = newLinkInput.value.trim();
+
+            if (newSource !== '') {
+                m3u8link.src = newSource;
+                player.src({
+                    src: newSource,
+                    type: 'application/x-mpegURL'
+                });
+
+                player.load();
+                player.play();
+            }
+        });
+</script>
+</body>
+</html>
