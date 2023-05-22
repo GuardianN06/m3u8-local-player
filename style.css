@@ -12,7 +12,7 @@ body{
   font-size: inherit;
   background-color: #252424;
   border: none;
-  color: #646464;
+  color: #a9a9a9;
   padding: 0.7rem 1rem;
   border-radius: 30px;
   width: 12em;
@@ -24,16 +24,16 @@ body{
 
 .search__input:focus {
   outline: none;
-  background-color: #f0eeee;
+  background-color: #282727;
 }
 
 .search__input::-webkit-input-placeholder {
   font-weight: 100;
-  color: #ccc;
+  color: #a9a9a9;
 }
 
 .search__input:focus + .search__button {
-  background-color: #f0eeee;
+  background-color: #282727;
 }
 
 .search__button {
